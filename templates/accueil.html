@@ -1,0 +1,31 @@
+{% extends "connected.html" %}
+
+{% block body %}
+    <div class="container conteneur">
+        {% for (fluxParse, fluxOrigin) in zip %}
+            <div class="row">
+                <div class="col-12 col-md-11">
+                    <a href="{{ url_for('visionnerFlux', linkFlux=fluxOrigin.lienFlux) }}" class="article-lien">
+                        <article class="articles">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h1>{{fluxParse.feed.title}}</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h2>{{fluxParse.feed.description}}</h2>
+                                    </div> 
+                                </div>
+                            </div>  
+                        </article>
+                    </a>
+                </div>
+                <div class="col-12 col-md-1">
+                    <a href="{{ url_for('supprimerFlux', idFluxUser=fluxOrigin.idUser, linkFlux=fluxOrigin.lienFlux) }}"  class="deleteFlow">Supprimer</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

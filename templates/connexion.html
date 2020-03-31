@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="text-center">Connexion</h1>
+<form method="POST">
+  <div class="container formulaire">
+    {% for field in form %}
+      {% if field.widget.input_type != 'hidden' %}
+        <div class="row">
+          <div class="col-sm">
+            {{ field.label(class_="form-label")}}
+          </div>
+        </div>
+        {% if field.errors %}
+          {% for error in field.errors %}
+            <div class="alert alert-error">{{ error }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+      <div class="row">
+        <div class="col-sm">
+          {{ field(class_="form-control") }}
+        </div>
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-outline-success btn-lg btn-block">Valider</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'connected.html' %}
+
+{% block body %}
+<div class="container conteneur">
+    <div class="row">
+        <div class="col-sm">
+            <h2 class="subtitle">Ajouter un nouveau flux</h2>
+        </div>
+    </div>
+</div>
+
+<form method="POST">
+    <div class="container">
+        {% for field in form %}
+            <div class="form-group">
+                    {% if field.widget.input_type != 'hidden' %}
+                        <div class="row">
+                            <div class="col-sm">
+                                {{ field.label(class_="form-label") }}
+                            </div>
+                        </div>
+                        {% if field.errors %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-error">{{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-sm">
+                            {{ field(class_="form-control") }}
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+</form>
+{% endblock %}

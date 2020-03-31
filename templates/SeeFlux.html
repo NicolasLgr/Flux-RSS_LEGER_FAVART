@@ -1,0 +1,36 @@
+{% extends "connected.html" %}
+
+{% block body %}
+    <div class="container conteneur">
+        <div class="row">
+            <div class="col-sm">
+                <H1>{{ fluxparse.feed.title }}</H1>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-sm">
+                    <H1>{{ fluxparse.feed.description }}</H1>
+                </div>
+        </div>
+    </div>
+    <div class="container">
+        {% for item in element %}
+        <div class="element">
+        <div class="row">
+            <div class="col-8">
+                <h5>{{ item.title }}</h5>
+            </div>
+            <div class="col-4">
+                <p>{{ item.published }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p>{{ item.summary }}</p>
+            </div>
+        </div>
+        <p>{{ item.keys() }}</p>
+    </div>        
+        {% endfor %}  
+    </div>
+{% endblock %}
