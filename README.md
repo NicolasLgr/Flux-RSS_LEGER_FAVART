@@ -6,8 +6,19 @@ D'abord installer les dépendances
 ```
 pipenv install
 ```
+Ensuite ouvrez le shell de pipenv
 
-Puis lancer dans le navigateur
+```
+pipenv shell
+```
+
+Puis initialiser la database
+
+```
+flask initdb
+```
+
+Enfin Vous pouvez lancer l'application avec
 
 ```
 flask run
