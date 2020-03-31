@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1 class="text-center">Connexion</h1>
+<h1 class="text-center formulaire">Connexion</h1>
 <form method="POST">
-  <div class="container formulaire">
+  <div class="container ">
     {% for field in form %}
       {% if field.widget.input_type != 'hidden' %}
         <div class="row">
@@ -23,7 +23,9 @@
         </div>
       </div>
     {% endfor %}
-    <button type="submit" class="btn btn-outline-success btn-lg btn-block">Valider</button>
+    <div class="bouton">
+      <button type="submit" class="btn btn-outline-success btn-lg btn-block">Valider</button>
+    </div>  
   </div>
 </form>
 {% endblock %}

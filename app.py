@@ -77,6 +77,7 @@ def accueil():
 
 
 
+
 # Ajouter un Flux
 @app.route('/AddFlux.html', methods=['GET', 'POST', ])
 @login_required

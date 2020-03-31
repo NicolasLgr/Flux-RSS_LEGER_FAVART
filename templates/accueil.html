@@ -23,7 +23,8 @@
                     </a>
                 </div>
                 <div class="col-12 col-md-1">
-                    <a href="{{ url_for('supprimerFlux', idFluxUser=fluxOrigin.idUser, linkFlux=fluxOrigin.lienFlux) }}"  class="deleteFlow">Supprimer</a>
+                    
+                    <a href="{{ url_for('supprimerFlux', idFluxUser=fluxOrigin.idUser, linkFlux=fluxOrigin.lienFlux) }}"  class="deleteFlow"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
         {% endfor %}
